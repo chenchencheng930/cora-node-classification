@@ -1,3 +1,5 @@
+[English](./README.md) | [中文](./README_zh.md)
+
 # Graph Text Node Classification
 
 This project explores node classification on the Cora citation network using graph learning methods.
@@ -20,12 +22,31 @@ We use the **Cora** citation network dataset from PyTorch Geometric.
 - **Node Features**: bag-of-words representations
 - **Labels**: paper categories
 
+## Motivation
+
+Many real-world data are naturally relational, such as citation networks, social networks, recommender systems, and knowledge graphs. Graph learning methods can leverage both node attributes and structural information. This project aims to understand the value of graph neural networks and build a small but reproducible graph learning pipeline.
+
 ## Models
 
 The following models are included in this project:
 - **MLP**: a non-graph baseline using only node features
 - **GCN**: Graph Convolutional Network
 - **GAT**: Graph Attention Network
+
+## Project Structure
+
+    graph-text-node-classification/
+    ├─ README.md
+    ├─ README_zh.md
+    ├─ requirements.txt
+    ├─ train.py
+    ├─ models.py
+    ├─ utils.py
+    ├─ report.md
+    ├─ plot_results.py
+    ├─ results/
+    │  ├─ metrics.csv
+    │  └─ comparison.png
 
 ## Results
 
@@ -48,11 +69,22 @@ The following results were obtained on the Cora dataset:
 - GCN achieves the best result in the current setting, while GAT performs similarly.
 - These results show that graph structure is highly informative for node classification.
 
-## Files
+## How to Run
 
-- `train.py`: training script
-- `models.py`: model definitions
-- `plot_results.py`: result visualization
-- `report.md`: experiment summary
-- `results/metrics.csv`: experiment results
-- `results/comparison.png`: comparison figure
+Install dependencies:
+
+    pip install -r requirements.txt
+
+Run training:
+
+    python train.py --model mlp
+    python train.py --model gcn
+    python train.py --model gat
+
+Plot results:
+
+    python plot_results.py
+
+## Future Work
+
+As a further step, this project can be extended to explore text feature fusion, combining semantic text embeddings with graph features for node classification.
