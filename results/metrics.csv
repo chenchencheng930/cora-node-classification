@@ -1,0 +1,4 @@
+model,hidden_dim,lr,weight_decay,epochs,best_val_acc,best_test_acc
+mlp,16,0.01,0.0005,200,0.52,0.523
+gcn,16,0.01,0.0005,200,0.784,0.806
+gat,16,0.01,0.0005,200,0.782,0.804
